@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget id="gantt.widget.GanttChart" needsEntityContext="true" xmlns="http://www.mendix.com/widget/1.0/">
+	<name>Gantt Chart</name>
+	<description>Gantt Chart</description>
+	<icon>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAd0lEQVQ4Ee1R2w3AIAiEpoN3N+fR
+        FSiXSEMErb9NSoIgd/KSRIQyJaKiKl1LxkGMcWTCDEgYmPcDFwl6kqrgpWpVZxacau+eDqwKrBKm
+        gq6MC9I5MkEYY6v7sQJ3sNDBzgg+cUjwj+DXs+eHJX77F9pb+24rzfwbhQ1zIf27MAgAAAAASUVO
+        RK5CYII=
+	</icon>
+	<properties>
+		<property key="ganttTitle" type="string">
+    		<caption>Title</caption>
+      		<category>Appearance</category>
+      		<description>Title</description>
+    	</property>
+        <property key="ganttWidth" type="integer" defaultValue="0">
+    		<caption>Gantt width</caption>
+      		<category>Appearance</category>
+      		<description>Gantt width</description>
+    	</property>
+		<property key="ganttHeight" type="integer" defaultValue="0">
+    		<caption>Gantt height</caption>
+      		<category>Appearance</category>
+      		<description>Gantt height</description>
+    	</property>
+		<property key="taskCaption" type="string">
+    		<caption>Task column caption</caption>
+      		<category>Appearance</category>
+      		<description>Task column caption</description>
+    	</property>
+		<property key="taskEntity" type="entity">
+    		<caption>Task entity</caption>
+      		<category>Data source</category>
+      		<description>Task entity</description>
+    	</property>
+        <property key="taskSource" type="microflow">
+    		<caption>Task data source</caption>
+      		<category>Data source</category>
+      		<description>Task data source</description>
+            <returnType type="Object" isList="true" entityProperty="taskEntity"/>
+    	</property>
+		<property key="taskName" type="attribute" entityProperty="taskEntity">
+    		<caption>Task descriptor</caption>
+      		<category>Data source</category>
+      		<description>Task descriptor</description>
+            <attributeTypes>
+                <attributeType name="String"/>
+            </attributeTypes>
+    	</property>
+		<property key="taskStart" type="attribute" entityProperty="taskEntity">
+    		<caption>Task start date</caption>
+      		<category>Data source</category>
+      		<description>Task start date</description>
+            <attributeTypes>
+                <attributeType name="DateTime"/>
+            </attributeTypes>
+    	</property>
+		<property key="taskEnd" type="attribute" entityProperty="taskEntity">
+    		<caption>Task end date</caption>
+      		<category>Data source</category>
+      		<description>Task end date</description>
+            <attributeTypes>
+                <attributeType name="DateTime"/>
+            </attributeTypes>
+    	</property>
+		<property key="taskPercent" type="attribute" entityProperty="taskEntity">
+    		<caption>Task percentage completed</caption>
+      		<category>Data source</category>
+      		<description>Task percentage completed</description>
+            <attributeTypes>
+                <attributeType name="Integer"/>
+            </attributeTypes>
+    	</property>
+		<property key="taskResources" type="attribute" entityProperty="taskEntity">
+    		<caption>Task resources</caption>
+      		<category>Data source</category>
+      		<description>Task resources</description>
+            <attributeTypes>
+                <attributeType name="String"/>
+            </attributeTypes>
+    	</property>
+		<property key="dependencyPath" type="entity" isPath="yes" pathType="reference" entityProperty="taskEntity">
+    		<caption>Dependency path</caption>
+      		<category>Data source</category>
+      		<description>Dependency path</description>
+    	</property>
+	</properties>
+</widget>
